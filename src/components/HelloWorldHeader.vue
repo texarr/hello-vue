@@ -12,5 +12,7 @@ export default class HelloWorldHeader extends Vue {
 }
 </script>
 <style scoped lang="scss">
-
+  h1 {
+    color: green;
+  }
 </style>
