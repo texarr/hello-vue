@@ -1,7 +1,9 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
+    <h1 :style="changeColor('#fab')">{{ msg }}</h1>
     <button @click="handleClick">click me</button>
+    <label for="color">Change color</label>
+    <input name="color" id="color"/>
   </div>
 </template>
 
@@ -12,8 +14,12 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 export default class HelloWorld extends Vue {
   @Prop() public msg!: string;
 
+  private changeColor(color: string) {
+    return `color: ` + color;
+  }
+
   private handleClick() {
-    alert('click');
+    this.changeColor('#baf');
   }
 }
 </script>
