@@ -1,5 +1,6 @@
 <template>
   <div class="hello">
+    <HelloWorldHeader/>
     <h1 :style='data'>{{ msg }}</h1>
     <button @click="handleClick">Change color</button><br/>
     <label for="color">Change color by hex, color name or another pattern</label>
@@ -9,12 +10,17 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
+import HelloWorldHeader from './HelloWorldHeader.vue';
 
 interface Data {
   color: string;
 }
 
-@Component
+@Component( {
+  components: {
+    HelloWorldHeader,
+  },
+})
 export default class HelloWorld extends Vue {
   @Prop() public msg!: string;
   public data: Data = {
