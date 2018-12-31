@@ -2,8 +2,8 @@
   <div class="hello">
     <h1 :style='data'>{{ msg }}</h1>
     <button @click="handleClick">Change color</button><br/>
-    <label for="color">Change color by hex</label>
-    <input name="color" id="color"/>
+    <label for="color">Change color by hex, color name or another pattern</label>
+    <input name="color" id="color" v-model="data.color"/>
   </div>
 </template>
 
